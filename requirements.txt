@@ -3,6 +3,6 @@ pandas
 streamlit
 datetime
 plotly
-PIL==9.3.0
+Pillow
 os
 defillama2
