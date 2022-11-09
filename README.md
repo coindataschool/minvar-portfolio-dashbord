@@ -1,7 +1,9 @@
 # minvar-portfolio-dashbord
 
 A dashboard for calculating the efficient frontier and min-variance portfolio of 
-GMX and GNS based on historical daily prices.
+**GMX** and GNS based on historical daily prices.
+
+![screen](https://github.com/coindataschool/minvar-portfolio-dashbord/blob/main/screenshot.png)
 
 Manually run the following command to update data and calculation every month:
 
