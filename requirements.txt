@@ -4,5 +4,4 @@ streamlit
 datetime
 plotly
 Pillow
-os
 defillama2
