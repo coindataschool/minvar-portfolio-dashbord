@@ -27,7 +27,7 @@ c1, c2 = st.columns(2)
 with c1:
     start_date = st.date_input(
         "Start Date", date(2022, 6, 1), min_value=date(2021, 11, 2), 
-        max_value=date.today()-timedelta(days=7))
+        max_value=date.today()-timedelta(days=30))
 with c2:
     end_date = st.date_input(
         "End Date", date.today(), min_value=date(2021, 11, 2)+timedelta(days=90), 
@@ -56,7 +56,10 @@ if last_avail_date < end_date:
     df_new = obj.get_tokens_hist_prices(dd, new_start_str, end_str, type='open')
     # stack previously and newly downloaded data 
     df = pd.concat([df, df_new]).dropna()
-# st.dataframe(df.head())
+# st.dataframe(df.tail())
+
+# subset prices with user specificed start and end dates
+df = df.loc[start_date:end_date]
 
 # calculate daily returns
 simple_rets = df.pct_change().dropna()
