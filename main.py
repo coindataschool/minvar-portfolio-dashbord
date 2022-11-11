@@ -142,6 +142,7 @@ st.plotly_chart(fig, use_container_width=True)
 # Observations
 st.markdown("- Given a volatility, draw a vertical line, and you want to pick the portfolio at the intersection of the vertical line and the top half of the curve.")
 st.markdown("- If you want to mute volatility, the min-variance portfolio (red dot) is a good choice.")
+st.markdown("- Read this [article](https://coindataschool.substack.com/p/how-to-best-weigh-gmx-and-gns-in) for more info.")
 
 # --- analyze min-variance portfolios of different start dates --- #
 
