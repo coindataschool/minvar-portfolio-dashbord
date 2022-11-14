@@ -34,7 +34,7 @@ else:
 # So I wrote a method to call its snapshot price API iteratively to get 
 # historical daily open (00:00:00) or close (23:59:59) prices. 
 # It's slow so we'll save the downloaded data on disk and have the app call it. 
-df = obj.get_tokens_hist_prices(dd, start, today, type='open')
+df = obj.get_daily_open_close(dd, start, today, 'open')
 
 # show price data
 df = df.dropna()

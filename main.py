@@ -53,7 +53,7 @@ if last_avail_date < end_date:
     }
     new_start = last_avail_date + timedelta(days=1)
     new_start_str = new_start.strftime(date_format)
-    df_new = obj.get_tokens_hist_prices(dd, new_start_str, end_str, type='open')
+    df_new = obj.get_daily_open_close(dd, new_start_str, end_str, 'open')
     # stack previously and newly downloaded data 
     df = pd.concat([df, df_new]).dropna()
 # st.dataframe(df.tail())
