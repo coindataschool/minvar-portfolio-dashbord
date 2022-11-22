@@ -11,7 +11,7 @@ plt.style.use("fivethirtyeight")
 
 # read price data and calculate daily returns
 fnames = os.listdir('data')
-df = pd.concat([pd.read_pickle(os.path.join('data',fnm)) for fnm in fnames])
+df = pd.concat([pd.read_pickle(os.path.join('data',fnm)) for fnm in fnames if fnm != '.DS_Store'])
 simple_rets = df.pct_change().dropna()
 # simple_rets.head()
 

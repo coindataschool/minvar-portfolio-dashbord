@@ -24,7 +24,7 @@ if os.path.exists('data'):
     dates = [
         datetime.strptime(fnm.replace('open_prices_', '').replace('.pkl', ''),
                           date_format) 
-        for fnm in fnames]
+        for fnm in fnames if fnm != '.DS_Store']
     start = max(dates) + timedelta(days=1)
     start = start.strftime(date_format)
 else: 
