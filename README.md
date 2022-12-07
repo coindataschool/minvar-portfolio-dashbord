@@ -1,6 +1,6 @@
 # minvar-portfolio-dashbord
 
-A [dashboard](https://coindataschool-minvar-portfolio-dashbord-main-w2wjqa.streamlit.app/) for calculating the efficient frontier and min-variance portfolio of **GMX** and GNS based on historical daily prices.
+A [dashboard](https://coindataschool-minvar-portfolio-dashbord-main-w2wjqa.streamlit.app/) for calculating the efficient frontier and min-variance portfolio of **GMX** and **GNS** based on historical daily prices.
 
 ![screen](https://github.com/coindataschool/minvar-portfolio-dashbord/blob/main/screenshot.png)
 
