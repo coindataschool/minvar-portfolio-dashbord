@@ -59,7 +59,11 @@ if last_avail_date < end_date:
 # st.dataframe(df.tail())
 
 # subset prices with user specificed start and end dates
-df = df.loc[start_date:end_date]
+# df = df.loc[start_date:end_date] # throws the following error on streamlit server:
+# # 'Cannot get right slice bound for non-unique label: datetime.date(2023, 1, 16)'
+# # but works on local server.
+df = df.loc[(df.index>=start_date) & (df.index<=end_date)] # works both locally 
+    # and on streamlit server
 
 # calculate daily returns
 simple_rets = df.pct_change().dropna()
