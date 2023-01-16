@@ -42,7 +42,6 @@ end_str = end_date.strftime(date_format)
 fnames = os.listdir('data')
 df = pd.concat([pd.read_pickle(os.path.join('data',fnm)) for fnm in fnames
                 if fnm.endswith('.pkl')])
-df.index = pd.to_datetime(df.index, utc=True).date
 last_avail_date = df.index[-1]
 if last_avail_date < end_date:
     # download newer data that weren't on disk
@@ -60,7 +59,7 @@ if last_avail_date < end_date:
 # st.dataframe(df.tail())
 
 # subset prices with user specificed start and end dates
-df = df.loc[start_date:end_date, :]
+df = df.loc[start_date:end_date]
 
 # calculate daily returns
 simple_rets = df.pct_change().dropna()
