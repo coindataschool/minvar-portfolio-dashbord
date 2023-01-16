@@ -60,7 +60,7 @@ if last_avail_date < end_date:
 # st.dataframe(df.tail())
 
 # subset prices with user specificed start and end dates
-df = df.loc[start_date:end_date]
+df = df.loc[start_date:end_date, :]
 
 # calculate daily returns
 simple_rets = df.pct_change().dropna()
