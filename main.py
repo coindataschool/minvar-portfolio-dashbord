@@ -42,7 +42,8 @@ end_str = end_date.strftime(date_format)
 fnames = os.listdir('data')
 df = pd.concat([pd.read_pickle(os.path.join('data',fnm)) for fnm in fnames
                 if fnm.endswith('.pkl')])
-last_avail_date = df.index[-1].date()
+df.index = pd.to_datetime(df.index, utc=True).date
+last_avail_date = df.index[-1]
 if last_avail_date < end_date:
     # download newer data that weren't on disk
     obj = DefiLlama()
