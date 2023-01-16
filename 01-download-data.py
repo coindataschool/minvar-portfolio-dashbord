@@ -30,10 +30,7 @@ if os.path.exists('data'):
 else: 
     start = '2021-11-02'
 
-# DeFiLlama doesn't offer an API for bulk downloading historical prices. 
-# So I wrote a method to call its snapshot price API iteratively to get 
-# historical daily open (00:00:00) or close (23:59:59) prices. 
-# It's slow so we'll save the downloaded data on disk and have the app call it. 
+# much faster now, but still will save downloaded data on disk and have the app call it. 
 df = obj.get_daily_open_close(dd, start, today, 'open')
 
 # show price data
